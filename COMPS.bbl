@@ -1,0 +1,255 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{OCaml}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5501c8fbf03a0115156f508048e922ca}{%
+           family={Clarkson},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{5501c8fbf03a0115156f508048e922ca}
+      \strng{fullhash}{5501c8fbf03a0115156f508048e922ca}
+      \strng{bibnamehash}{5501c8fbf03a0115156f508048e922ca}
+      \strng{authorbibnamehash}{5501c8fbf03a0115156f508048e922ca}
+      \strng{authornamehash}{5501c8fbf03a0115156f508048e922ca}
+      \strng{authorfullhash}{5501c8fbf03a0115156f508048e922ca}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://cs3110.github.io/textbook/cover.html}
+      \field{title}{OCaml Programming: Correct + Efficient + Beautiful}
+      \field{year}{2021}
+    \endentry
+    \entry{Guo2018Non}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1fc5e97868fb534d658782397c022852}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Philip\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fc5e97868fb534d658782397c022852}
+      \strng{fullhash}{1fc5e97868fb534d658782397c022852}
+      \strng{bibnamehash}{1fc5e97868fb534d658782397c022852}
+      \strng{authorbibnamehash}{1fc5e97868fb534d658782397c022852}
+      \strng{authornamehash}{1fc5e97868fb534d658782397c022852}
+      \strng{authorfullhash}{1fc5e97868fb534d658782397c022852}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM}
+      \field{month}{04}
+      \field{title}{Non-Native English Speakers Learning Computer Programming: Barriers, Desires, and Design Opportunities}
+      \field{year}{2018}
+    \endentry
+    \entry{Idris2018Correlation}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9aea9066cb4f533843758e527a039cc5}{%
+           family={Idris},
+           familyi={I\bibinitperiod},
+           given={Mrwan\bibnamedelima Ben},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{9aea9066cb4f533843758e527a039cc5}
+      \strng{fullhash}{9aea9066cb4f533843758e527a039cc5}
+      \strng{bibnamehash}{9aea9066cb4f533843758e527a039cc5}
+      \strng{authorbibnamehash}{9aea9066cb4f533843758e527a039cc5}
+      \strng{authornamehash}{9aea9066cb4f533843758e527a039cc5}
+      \strng{authorfullhash}{9aea9066cb4f533843758e527a039cc5}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{West Virginia University}
+      \field{month}{03}
+      \field{title}{The Correlation between Arabic Student's English Proficiency and Their Computer Programming Ability at the University Level}
+      \field{year}{2018}
+    \endentry
+    \entry{J.A.V.A.}{misc}{}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://esolangs.org/wiki/J.A.V.A.}
+      \field{month}{06}
+      \field{title}{J.A.V.A.}
+      \field{year}{2020}
+    \endentry
+    \entry{Morr2014Esoteric}{article}{}
+      \name{author}{1}{}{%
+        {{hash=868b4e249af529d655a58507aba8a16b}{%
+           family={Morr},
+           familyi={M\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{868b4e249af529d655a58507aba8a16b}
+      \strng{fullhash}{868b4e249af529d655a58507aba8a16b}
+      \strng{bibnamehash}{868b4e249af529d655a58507aba8a16b}
+      \strng{authorbibnamehash}{868b4e249af529d655a58507aba8a16b}
+      \strng{authornamehash}{868b4e249af529d655a58507aba8a16b}
+      \strng{authorfullhash}{868b4e249af529d655a58507aba8a16b}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Braunschweig University of Technology}
+      \field{month}{12}
+      \field{title}{Esoteric Programming Languages: An introduction to Brainfuck, INTERCAL, Befunge, Malbolge, and Shakespeare}
+      \field{year}{2014}
+    \endentry
+    \entry{typetheory}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5c61cc0c29f93f36a5bbdae36df1a81b}{%
+           family={nLabauthors},
+           familyi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{fullhash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{bibnamehash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{authorbibnamehash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{authornamehash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{authorfullhash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \field{sortinit}{n}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://ncatlab.org/nlab/show/type+theory}
+      \field{month}{05}
+      \field{title}{Type Theory}
+      \field{year}{2022}
+    \endentry
+    \entry{Pierce2002Types}{book}{}
+      \name{author}{1}{}{%
+        {{hash=7365a4e827c2dfa2c5af0c0ec4c18c27}{%
+           family={Pierce},
+           familyi={P\bibinitperiod},
+           given={Benjamin\bibnamedelima C.},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The MIT Press}%
+      }
+      \strng{namehash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{fullhash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{bibnamehash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{authorbibnamehash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{authornamehash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{authorfullhash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \field{extraname}{1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Types and Programming Languages}
+      \field{year}{2002}
+    \endentry
+    \entry{Pierce2021Software}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7365a4e827c2dfa2c5af0c0ec4c18c27}{%
+           family={Pierce},
+           familyi={P\bibinitperiod},
+           given={Benjamin\bibnamedelima C.},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{fullhash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{bibnamehash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{authorbibnamehash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{authornamehash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \strng{authorfullhash}{7365a4e827c2dfa2c5af0c0ec4c18c27}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://softwarefoundations.cis.upenn.edu/lf-current/index.html}
+      \field{month}{08}
+      \field{title}{Software Foundations Volume 1: Logical Foundations}
+      \field{year}{2021}
+    \endentry
+    \entry{Pradel2014TypeDevil}{article}{}
+      \name{author}{1}{}{%
+        {{hash=862571674423e73a60c8076124bb119a}{%
+           family={Pradel},
+           familyi={P\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{862571674423e73a60c8076124bb119a}
+      \strng{fullhash}{862571674423e73a60c8076124bb119a}
+      \strng{bibnamehash}{862571674423e73a60c8076124bb119a}
+      \strng{authorbibnamehash}{862571674423e73a60c8076124bb119a}
+      \strng{authornamehash}{862571674423e73a60c8076124bb119a}
+      \strng{authorfullhash}{862571674423e73a60c8076124bb119a}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Electrical Engineering and Computer Sciences University of California at Berkeley}
+      \field{title}{TypeDevil: Dynamic Type Inconsistency Analysis for JavaScript}
+      \field{year}{2014}
+    \endentry
+    \entry{SimPPLe}{misc}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://esolangs.org/wiki/SimPPLe}
+      \field{month}{02}
+      \field{title}{SimPPLe}
+      \field{year}{2022}
+    \endentry
+    \entry{CS4110IMP}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{title}{The IMP Language}
+      \field{year}{2021}
+    \endentry
+    \entry{Veerasamy2014Teaching}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d8c8b0fd1e3f6d986ab4a09412440419}{%
+           family={Veerasamy},
+           familyi={V\bibinitperiod},
+           given={Ashok\bibnamedelima Kumar},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{d8c8b0fd1e3f6d986ab4a09412440419}
+      \strng{fullhash}{d8c8b0fd1e3f6d986ab4a09412440419}
+      \strng{bibnamehash}{d8c8b0fd1e3f6d986ab4a09412440419}
+      \strng{authorbibnamehash}{d8c8b0fd1e3f6d986ab4a09412440419}
+      \strng{authornamehash}{d8c8b0fd1e3f6d986ab4a09412440419}
+      \strng{authorfullhash}{d8c8b0fd1e3f6d986ab4a09412440419}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{RMIT University}
+      \field{title}{Teaching English Based Programming Courses to English Language Learners/Non-Native Speakers of English}
+      \field{year}{2014}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
