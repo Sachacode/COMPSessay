@@ -36,7 +36,7 @@ coqtop
 
 ## Running the Interpreter
 
-Before running the Typma interpreter, run this command in the project file directory and to install any depenacies for the codebase
+Before running the Typma interpreter, run this command in the project file directory and to install any dependencies for the codebase
 ```
 dune install
 ```
@@ -63,16 +63,7 @@ dune exec ./bin/main.exe -- -fuzz 100
 
 ## Code Architecture Overview
 
-This project's orginization is based on a simple OCaml project design. Here is a diagram of how the files are used when a command is ran.
-```
-dune exec ./bin/main.exe -- -typma tests/test0.typ
-```
-main.ml -> test0.typ -> lexer.mll -> parser.mly -> Typma.ml
-
-```
-dune exec ./bin/main.exe -- -fuzz 100
-```
-main.ml -> lexer.mll -> parser.mly
+This project's organization is based on a simple OCaml project design.
 
 The main directory has five folders: build, tests, lib, dep, and bin. 
 
@@ -83,22 +74,33 @@ The tests file is where the basic Typma test programs are found.
 The lib file is where the parser and lexer are located: 
 - lexer.mll: takes in the string with the text from a Typma program and turns it into tokens. 
 - parser.mly: takes the tokens and parses them into an AST to be used by the evaluation code. 
-- toString.ml: outputs the string represnation of the AST.
+- toString.ml: outputs the string representation of the AST.
 
-Typma's parser is an accplication of the libraries OCamllex and Menhir, adn does not devitate from a basic application of those tools. The dune file here and in every other folder is apart of the dune build system for compling the OCaml code and contains the libraries each folder uses.
+Typma's parser is an application of the libraries OCamllex and Menhir, and does not deviate from a basic application of those tools. The dune file here and in every other folder is apart of the dune build system for compiling the OCaml code and contains the libraries each folder uses.
 
-The dep file is where the Coq files are located and extracted into OCaml files and has 3 sub folders: build, lib, adn extarct.
+The dep file is where the Coq files are located and extracted into OCaml files and has 3 sub folders: build, lib, and extarct.
 
 The dep/lib folder has the files Typma.v and Sus.v:
-- Typma.v: the file for the evalution and proofs for Typma conatining the syntax rules, Typma calculus conversions and operations, expression evaluation, inductive proposition, and proof, and command evalutation, inductive proposition, and proofs.
+- Typma.v: the file for the evaluation and proofs for Typma containing the syntax rules, Typma calculus conversions and operations, expression evaluation, inductive proposition, and proof, and command evaluation, inductive proposition, and proofs.
 - Sus.v: the wrapper type for strings to avoid extraction issues that cause bugged OCaml code
 
-The proof for command statements is split into three parts: ceval_step__ceval, ceval__ceval_step, ceval_and_ceval_step_coincide. c_step_more is used for some cases of ceval__ceval_step. This is needed because writing this as a single proof leads to a case of infinite recursion resulting from an infinite while loop. An extra parameter is added to the function, inductive proposition, and proofs which is a number that decrements every time a recusive call is made, eventually this will hit zero and the function will return none indicating an infinite loop and bypassing the infinite recursion. ceval_step__ceval and c_step_more are lifted from Software Foundations: Logoical Foundations chapter ImpCEvalFun.v but modified to work with the Typma type. ceval__ceval_step is my answer to the excercise from tjat section and is muy original code.
+The proof for command statements is split into three parts: ceval_step__ceval, ceval__ceval_step, ceval_and_ceval_step_coincide. c_step_more is used for some cases of ceval__ceval_step. This is needed because writing this as a single proof leads to a case of infinite recursion resulting from an infinite while loop. An extra parameter is added to the function, inductive proposition, and proofs which is a number that decrements every time a recursive call is made, eventually this will hit zero and the function will return none indicating an infinite loop and bypassing the infinite recursion. ceval_step__ceval and c_step_more are lifted from Software Foundations: Logical Foundations chapter ImpCEvalFun.v but modified to work with the Typma type. ceval__ceval_step is my answer to the exercise from that section and is my original code.
 
 The dep/extract folder has Extract.v:
 - Extract.v: the extraction process is carried out and explicitly changes the order of the arguments of the substring function to be compitable with OCaml and OCaml print statements are added
 
-The dep/build folder is where the results of the extraction are located. There a lot of generated files but the main ones are Typma.ml and Sus.ml, which are the OCaml versions of the Coq code without the inductive propositions and the proofs.
+The dep/build folder is where the results of the extraction are located. There are a lot of generated files but the main ones are Typma.ml and Sus.ml, which are the OCaml versions of the Coq code without the inductive propositions and the proofs.
 
 The bin folder has main.ml:
-- main.ml: this is the file that brings all of the pieces together, the command line argumenst are defined here and teh required fucntions from the other files are placed in a pipline to be used
+- main.ml: this is the file that brings all the pieces together, the command line arguments are defined here and the required functions from the other files are placed in a pipeline to be used
+
+Here is a diagram of how the files are used when a command is ran.
+```
+dune exec ./bin/main.exe -- -typma tests/test0.typ
+```
+main.ml -> test0.typ -> lexer.mll -> parser.mly -> Typma.ml
+
+```
+dune exec ./bin/main.exe -- -fuzz 100
+```
+main.ml -> lexer.mll -> parser.mly
