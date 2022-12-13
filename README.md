@@ -1,4 +1,4 @@
-# Typma Programming Language README
+# README
 
 ## Replication Instructions
 
