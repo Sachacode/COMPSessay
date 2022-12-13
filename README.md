@@ -1,14 +1,14 @@
-# Software Foundations: Coq Tutorial
+# Typma Programming Language README
 
 ## Replication Instructions
 
-There are several dependancies that need to be installed before Coq, all commands are for a Mac system because I work on Mac.
+This project uses OCaml and Coq, OCaml is a depenancy for Coq, and all commands are for a Mac system because I work on Mac.
 
 Install Homebrew
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-Install Opam
+Install Opam: this installs OCaml
 ```
 brew install gpatch
 brew install opam
@@ -30,26 +30,75 @@ Check installation
 coqtop
 ```
 
-[Software Foundations Source Files](https://softwarefoundations.cis.upenn.edu/lf-current/index.html)
-
 [Install VSCode](https://code.visualstudio.com/)
 
 [Install Coq plugin](https://marketplace.visualstudio.com/items?itemName=maximedenes.vscoq)
 
-## Code Architecture Overview
+## Running the Interpreter
 
-A large number of files have been provided, the only important ones are the files for the first three chapters: Basics.v, Induction.v, and Lists.v are the only relevant files that I worked through. Each file is like a chapter from a textbook. Information is given with comments and provided functions, theorems, and proofs, these are not sections that I wrote and are from the textbook. All of the work I did is found on sections labeled exercise in comments. The difficulty of exercises varies with the number of stars.
-- one stars are easy, time estimated 1-2 minutes
-- two stars are standard, time estimated for 5-10 minutes
-- three stars are hard, time estimated for 10-30 minutes
-- four/five stars are extreme, time estimated for 30+ minutes
+Before running the Typma interpreter, run this command in the project file directory and to install any depenacies for the codebase
+```
+dune install
+```
 
-Run `make` in the terminal to save all defined functions, theorems, and proofs.
+This command complies the code without running it, the extraction is ran in this command
 ```
 make
 ```
 
-When checking a proof, press control + alt + down arrow to run a part of the proof. Press control + alt + up arrow to un-run any section of code. Press control + alt + right arrow to jump ahead or behind to wherever the cursor is.
+This command deletes the build files
+```
+make clean
+```
 
-To run my solutions, simply download the files for the Software Foundations, then replace the files with the ones provided.
+To run one of the test Typma programs, run this command in the project file directory, change the number to the desired file.
+```
+dune exec ./bin/main.exe -- -typma tests/test0.typ
+```
 
+To run the fuzzing program, run this command in the project file directory, change the number to the desired amount of iterations.
+```
+dune exec ./bin/main.exe -- -fuzz 100
+```
+
+## Code Architecture Overview
+
+This project's orginization is based on a simple OCaml project design. Here is a diagram of how the files are used when a command is ran.
+```
+dune exec ./bin/main.exe -- -typma tests/test0.typ
+```
+main.ml -> test0.typ -> lexer.mll -> parser.mly -> Typma.ml
+
+```
+dune exec ./bin/main.exe -- -fuzz 100
+```
+main.ml -> lexer.mll -> parser.mly
+
+The main directory has five folders: build, tests, lib, dep, and bin. 
+
+The build file is where the OCaml code is complied, and all of the files in the build folder are generated and were not written by me. 
+
+The tests file is where the basic Typma test programs are found. 
+
+The lib file is where the parser and lexer are located: 
+- lexer.mll: takes in the string with the text from a Typma program and turns it into tokens. 
+- parser.mly: takes the tokens and parses them into an AST to be used by the evaluation code. 
+- toString.ml: outputs the string represnation of the AST.
+
+Typma's parser is an accplication of the libraries OCamllex and Menhir, adn does not devitate from a basic application of those tools. The dune file here and in every other folder is apart of the dune build system for compling the OCaml code and contains the libraries each folder uses.
+
+The dep file is where the Coq files are located and extracted into OCaml files and has 3 sub folders: build, lib, adn extarct.
+
+The dep/lib folder has the files Typma.v and Sus.v:
+- Typma.v: the file for the evalution and proofs for Typma conatining the syntax rules, Typma calculus conversions and operations, expression evaluation, inductive proposition, and proof, and command evalutation, inductive proposition, and proofs.
+- Sus.v: the wrapper type for strings to avoid extraction issues that cause bugged OCaml code
+
+The proof for command statements is split into three parts: ceval_step__ceval, ceval__ceval_step, ceval_and_ceval_step_coincide. c_step_more is used for some cases of ceval__ceval_step. This is needed because writing this as a single proof leads to a case of infinite recursion resulting from an infinite while loop. An extra parameter is added to the function, inductive proposition, and proofs which is a number that decrements every time a recusive call is made, eventually this will hit zero and the function will return none indicating an infinite loop and bypassing the infinite recursion. ceval_step__ceval and c_step_more are lifted from S
+
+The dep/extract folder has Extract.v:
+- Extract.v: the extraction process is carried out and explicitly changes the order of the arguments of the substring function to be compitable with OCaml and OCaml print statements are added
+
+The dep/build folder is where the results of the extraction are located. There a lot of generated files but the main ones are Typma.ml and Sus.ml, which are the OCaml versions of the Coq code without the inductive propositions and the proofs.
+
+The bin folder has main.ml:
+- main.ml: this is the file that brings all of the pieces together, the command line argumenst are defined here and teh required fucntions from the other files are placed in a pipline to be used
